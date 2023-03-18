@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Configuration, OpenAIApi} from 'openai'
+import ImageAI from './components/ImageAI'
 
 function App() {
   const [prompt, setPrompt] = useState("")
@@ -24,12 +25,9 @@ function App() {
 
 
   return (
-    <div className='main'>
-      <h1>Generate an AI  Image</h1>
-      <input type="text" placeholder='Type Image Query' className='main-input' name='prompt' value={prompt} onChange={(e) => setPrompt(e.target.value)} />
-      <button onClick={generateImage}>Generate an Image</button>
-
-      {result.length > 0 && <img src={result} alt="result" className='result-image' />}
+    <div>
+      <ImageAI generateImage={generateImage} prompt={prompt} setPrompt={setPrompt} result={result} />
+      
     </div>
   )
 }
