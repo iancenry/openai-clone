@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { Configuration, OpenAIApi} from 'openai'
 import ImageAI from './components/ImageAI'
+import { arrayItems } from './AIOptions'
+import Translation from './components/Translation'
+import Options from './components/Options'
+
 
 function App() {
   const [prompt, setPrompt] = useState("")
@@ -11,6 +15,7 @@ function App() {
   });  
 
   const openai = new OpenAIApi(configuration);
+
 
   const generateImage = async ()=>{
     const res = await openai.createImage({
@@ -27,6 +32,7 @@ function App() {
   return (
     <div>
       <ImageAI generateImage={generateImage} prompt={prompt} setPrompt={setPrompt} result={result} />
+      <Options arrayItems={arrayItems}/>
       
     </div>
   )

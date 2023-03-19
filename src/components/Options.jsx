@@ -2,7 +2,9 @@ import React from 'react'
 
 const Options = () => {
   return (
-    <div>Options</div>
+    <div>
+      <h2>React AI App</h2>
+    </div>
   )
 }
 
