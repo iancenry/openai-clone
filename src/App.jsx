@@ -12,7 +12,7 @@ function App() {
   //ai options states
   const [option, setOption] = useState({})
   const [query, setQuery] = useState("")
-  const [result, setResult] = useState()
+  const [result, setResult] = useState("")
 
   const configuration = new Configuration({
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -42,7 +42,10 @@ function App() {
     setResult(response.data.choices[0].text)
   }
 
-  const resetOptions = () => setOption("")
+  const resetOptions = () => {
+    setOption("")
+    setResult("")
+  }
 
   return (
     <div>
