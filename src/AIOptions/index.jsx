@@ -1,3 +1,4 @@
+//configure look of option.jsx and option helps in setting up the api request
 export const arrayItems = [
     {
         name: 'Q&A',
