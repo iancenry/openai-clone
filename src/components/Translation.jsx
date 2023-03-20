@@ -4,7 +4,8 @@ const Translation = () => {
   return (
     <div className='translation-input'>
       <textarea className='text-area' cols="55" rows="10"></textarea>
-      <button className='action-button'>SEND</button>
+      <button>SEND</button>
+      <button>RESET</button>
     </div>
   )
 }

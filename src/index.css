@@ -103,10 +103,15 @@ button:focus-visible {
 }
 
 /* input */
+.translation-input{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+}
+
 .text-area{
   margin-top: 600px;
   font-size: 20px;
   padding: 10px;
 }
-
-.action-button{}
