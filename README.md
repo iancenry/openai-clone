@@ -11,3 +11,5 @@ This project displays use of the openai chatgpt api.
 1. Happy coding 💻
 
 * Dependencies used: ``react-mde``, ``nanoid``, ``showdown``, ``react-split``
+
+[Reference documentation](https://platform.openai.com/examples)
