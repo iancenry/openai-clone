@@ -3,7 +3,7 @@ import React from 'react'
 const Options = ({arrayItems, selectOption}) => {
   return (
     <div className='options'>
-      <h2>Dive Into AI</h2>
+      <h2>Dive Into Different AI Capabilities</h2>
       <div className='options-grid'>
         {arrayItems.map(item => {
           return (
