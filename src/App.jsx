@@ -8,10 +8,11 @@ import Options from './components/Options'
 function App() {
   // image generation states
   const [prompt, setPrompt] = useState('')
-  const [result, setResult] = useState('')
+  const [imgresult, setImgResult] = useState('')
   //ai options states
   const [option, setOption] = useState({})
   const [query, setQuery] = useState("")
+  const [result, setResult] = useState()
 
   const configuration = new Configuration({
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -27,7 +28,7 @@ function App() {
       size: '1024x1024',
     })
 
-    setResult(res.data.data[0].url)
+    setImgResult(res.data.data[0].url)
   }
 
   //select an option; receives the api request settings of selected option from AIOptions > index.jsx
@@ -36,9 +37,9 @@ function App() {
   }
   //send request to openai API
   const sendQuery = async () => {
-    let requestObject = {...option, prompt : query}
+    let requestObject = {prompt : query, ...option}
     const response = await openai.createCompletion(requestObject)
-    console.log(response)
+    setResult(response.data.choices[0].text)
   }
 
   const resetOptions = () => {}
@@ -49,13 +50,13 @@ function App() {
         generateImage={generateImage}
         prompt={prompt}
         setPrompt={setPrompt}
-        result={result}
+        imgresult={imgresult}
       />
 
       {Object.values(option).length === 0 ? (
         <Options arrayItems={arrayItems} selectOption={selectOption} />
       ) : (
-        <Translation sendQuery={sendQuery} setQuery={setQuery} />
+        <Translation sendQuery={sendQuery} setQuery={setQuery} result={result} />
       )}
     </div>
   )

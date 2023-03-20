@@ -14,8 +14,8 @@ const ImageAI = (props) => {
       />
       <button onClick={props.generateImage}>Generate an Image</button>
 
-      {props.result.length > 0 && (
-        <img src={props.result} alt="result" className="result-image" />
+      {props.imgresult.length > 0 && (
+        <img src={props.imgresult} alt="result" className="result-image" />
       )}
     </div>
   )
