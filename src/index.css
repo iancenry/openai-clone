@@ -14,27 +14,17 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
   justify-content: center;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.5em;
+  line-height: 0.8;
 }
 
 button {
@@ -56,21 +46,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-/*my styles*/
-/* imageAI */
+/* image generator */
 .main{
   display: flex;
   flex-direction: column;
@@ -91,3 +67,37 @@ button:focus-visible {
   width: 350px;
 }
 
+/* Option Selection */
+.options{
+  margin-top: 360px;
+  text-align: center;
+}
+.options-grid{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  margin-top: 10;
+}
+.options-grid__child{
+  border: 1px solid whitesmoke;
+  padding: 5px 30px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.options-grid__child:hover{
+  background-color: whitesmoke;
+  color: #212121;
+
+}
+
+.options-grid__child h3{
+  font-weight: 700;
+  
+}
+
+
+.options-grid__child p{
+  font-weight: 500;
+  font-size: 15px;
+  
+}

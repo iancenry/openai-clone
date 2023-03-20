@@ -28,11 +28,15 @@ function App() {
 
   }
 
+  const selectOption = (option) => {
+    
+  }
+
 
   return (
     <div>
       <ImageAI generateImage={generateImage} prompt={prompt} setPrompt={setPrompt} result={result} />
-      <Options arrayItems={arrayItems}/>
+      <Options arrayItems={arrayItems} selectOption={selectOption}/>
       
     </div>
   )
