@@ -2,7 +2,9 @@ import React from 'react'
 
 const Translation = () => {
   return (
-    <div>Translation</div>
+    <div>
+      <textarea className='text-area' cols="80" rows="20"></textarea>
+    </div>
   )
 }
 

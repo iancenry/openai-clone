@@ -101,3 +101,8 @@ button:focus-visible {
   font-size: 15px;
   
 }
+
+/* input */
+.text-area{
+  font-size: 20px;
+}

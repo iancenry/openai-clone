@@ -9,6 +9,7 @@ import Options from './components/Options'
 function App() {
   const [prompt, setPrompt] = useState("")
   const [result, setResult] = useState("")
+  const [option, setOption] = useState({})
 
   const configuration = new Configuration({
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -29,14 +30,15 @@ function App() {
   }
 
   const selectOption = (option) => {
-    
+    setOption(option)   
   }
 
 
   return (
     <div>
       <ImageAI generateImage={generateImage} prompt={prompt} setPrompt={setPrompt} result={result} />
-      <Options arrayItems={arrayItems} selectOption={selectOption}/>
+      
+      {Object.values(option).length === 0 ? <Options arrayItems={arrayItems} selectOption={selectOption}/> : <Translation />}
       
     </div>
   )

@@ -7,7 +7,7 @@ const Options = ({arrayItems, selectOption}) => {
       <div className='options-grid'>
         {arrayItems.map(item => {
           return (
-            <div className='options-grid__child' onClick={selectOption}>
+            <div key={item.id} className='options-grid__child' onClick={()=> selectOption(item.option)}>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
             </div>
