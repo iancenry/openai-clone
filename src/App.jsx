@@ -42,6 +42,7 @@ function App() {
     setResult(response.data.choices[0].text)
   }
 
+  //clear the selected option and chatgpt reply result when back button is clicked
   const resetOptions = () => {
     setOption("")
     setResult("")
