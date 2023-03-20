@@ -35,11 +35,11 @@ function App() {
     setOption(option)
   }
   //send request to openai API
-  const sendQuery = () => {
-    setOption({...option, prompt : query})
+  const sendQuery = async () => {
+    let requestObject = {...option, prompt : query}
+    const response = await openai.createCompletion(requestObject)
+    console.log(response)
   }
-
-  console.log(option)
 
   const resetOptions = () => {}
 
