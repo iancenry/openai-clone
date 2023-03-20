@@ -42,7 +42,7 @@ function App() {
     setResult(response.data.choices[0].text)
   }
 
-  const resetOptions = () => {}
+  const resetOptions = () => setOption("")
 
   return (
     <div>
@@ -56,10 +56,11 @@ function App() {
       {Object.values(option).length === 0 ? (
         <Options arrayItems={arrayItems} selectOption={selectOption} />
       ) : (
-        <Translation sendQuery={sendQuery} setQuery={setQuery} result={result} />
+        <Translation sendQuery={sendQuery} setQuery={setQuery} result={result} resetOptions={resetOptions} />
       )}
     </div>
   )
 }
 
 export default App
+
