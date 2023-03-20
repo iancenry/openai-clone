@@ -56,7 +56,10 @@ button:focus-visible {
   flex-direction: column;
   gap: 20px;
   align-items: center;
+}
 
+.main h1{
+  letter-spacing: 2px;
 }
 
 .main-input{
